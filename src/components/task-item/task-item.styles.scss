@@ -1,0 +1,66 @@
+$white: rgba(255,255,255,0.3);
+
+.wrapper {
+  display: flex;
+}
+
+.each-item{
+  width: 90%;
+  background: transparent;
+  padding: 1em;
+  margin: 1em 1em 1em 0;
+  border: none;
+  border-left: 1px solid $white;
+  border-top: 1px solid $white;
+  border-radius: 5000px;
+  backdrop-filter: blur(5px);
+  box-shadow: 4px 4px 60px rgba(0,0,0,0.2);
+  outline: none;
+  color: #270B57;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+  font-family: 'Nunito';
+  display: flex;
+  justify-content: space-between;
+}
+
+.custom-checkbox {
+  box-sizing: border-box;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  
+  .checkmark {
+    width: 25px;
+    height: 25px;
+    border: 2px solid #16f1ea;
+    display: inline-block;
+    border-radius: 25px;
+    background: transparent url(https://cdn-icons-png.flaticon.com/512/2107/2107638.png) center/0% no-repeat;
+    transition: background-size 0.2s ease;
+  }
+
+  input:checked + .checkmark{
+    background-size: 60%;
+  }
+  
+  input {
+    display:none;
+  }
+}
+
+.button-wrapper {
+  display: block;
+  margin: auto;
+
+  button {
+    border: none;
+    cursor: pointer;
+    i {
+      color: #270B57;
+    }
+  }
+}
+
+
+
