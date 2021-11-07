@@ -1,15 +1,11 @@
 import React from 'react';
 import TaskItem from '../task-item/task-item.component';
+import { useSelector } from 'react-redux';
+import store from "../../redux/store";
 
 const TasksList = () => {
-  const tasks = [
-    {id: 1, title: 'task1dvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv', completed: true },
-    {id: 2, title: 'task2', completed: false},
-    {id: 3, title: 'task3', completed: true},
-    {id: 4, title: 'task4', completed: false},
-    {id: 5, title: 'task5', completed: false}
-  ];
-
+  const tasks = useSelector((state) => [...state.tasks]);
+  
   return (
    <div className='wrapper-list'>
      {

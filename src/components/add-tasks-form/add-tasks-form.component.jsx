@@ -1,11 +1,22 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { addTask } from '../../redux/tasksSlice';
 import './add-tasks-form.styles.scss'
 
 const AddTask = () => {
-  const [value, setValue] = useState('');
+  const [value, setValue] = useState();
+
+  const dispatch = useDispatch();
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    dispatch(addTask({
+      title: value,
+    }))
+  }
 
   return (
-    <form className='form'>
+    <form onSubmit={onSubmit} className='form'>
       <label className='label'>
         <input 
           type='text'
