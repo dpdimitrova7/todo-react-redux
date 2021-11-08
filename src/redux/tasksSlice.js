@@ -9,13 +9,26 @@ const tasksSlice = createSlice({
   ],
   reducers: {
     addTask: (state, action) => {
-      const newTask = {
+      let newTask = {
         id: Date.now(),
         title: action.payload.title,
         completed: false
       };
       state.push(newTask);
     },
+    updateTask: (state, action) => {
+     state.map(task => {
+      console.log(state.tasks);
+        if(task.id === action.payload.id) {         
+          return {
+            ...task,
+            title: action.payload.title,
+            completed: action.payload.completed
+          }
+        return task;
+        }
+      })
+    }, 
     toggleComplete: (state, action) => {
       const index = state.findIndex((task) => task.id === action.payload.id);
       state[index].completed = action.payload.completed;
@@ -26,6 +39,6 @@ const tasksSlice = createSlice({
   },
 });
 
-export const { addTask, toggleComplete, deleteTodo } = tasksSlice.actions;
+export const { addTask, toggleComplete, deleteTodo, updateTask } = tasksSlice.actions;
 
 export default tasksSlice.reducer;
