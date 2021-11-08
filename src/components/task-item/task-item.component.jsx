@@ -29,6 +29,7 @@ const TaskItem = ({id, title, completed}) => {
     e.preventDefault();
     setEditable(!editable);
     dispatch(updateTask({
+      id: id,
       title: editTask,
     }))
   }

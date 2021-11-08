@@ -17,20 +17,18 @@ const tasksSlice = createSlice({
       state.push(newTask);
     },
     updateTask: (state, action) => {
-     state.map(task => {
-      console.log(state.tasks);
-        if(task.id === action.payload.id) {         
+      return state.map((todo) => {
+        if (todo.id === action.payload.id) {
           return {
-            ...task,
+            ...todo,
             title: action.payload.title,
-            completed: action.payload.completed
-          }
-        return task;
+          };
         }
-      })
+        return todo;
+      });
     }, 
     toggleComplete: (state, action) => {
-      const index = state.findIndex((task) => task.id === action.payload.id);
+      const index = state.findIndex((task) => state.task.id === state.action.payload.id);
       state[index].completed = action.payload.completed;
     },
     deleteTodo: (state, action) => {

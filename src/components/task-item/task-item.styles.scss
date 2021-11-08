@@ -18,6 +18,8 @@ $white: rgba(255,255,255,0.3);
   font-family: 'Nunito';
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  transition: all 0.6s ease-out;
 
 
 .custom-checkbox {
@@ -59,6 +61,7 @@ $white: rgba(255,255,255,0.3);
     background: transparent;
     border: none;
     color: #270B57;
+  
   }
 
   .del-button{
@@ -69,12 +72,24 @@ $white: rgba(255,255,255,0.3);
   }
 }
 
+.edit-form {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+}
+
 .edit-input {
   all: revert;
   margin: 0;
   padding: 0;
   background: none;
   outline: none;
+  border: 0;
+  font-family: 'Nunito';
+  color: #270B57;
+  font-weight: 500;
+  font-size: 16px;
 }
 
 .edit-save {
@@ -82,9 +97,8 @@ $white: rgba(255,255,255,0.3);
 }
 
 .edit-item {
-  width: 90%;
   background: transparent;
-  padding: 1em;
+  padding: 0.6em 0.6em 0.6em 1em;
   margin: 1em 1em 1em 0;
   border: none;
   border-left: 1px solid $white;
@@ -98,6 +112,7 @@ $white: rgba(255,255,255,0.3);
   font-family: 'Nunito';
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 
