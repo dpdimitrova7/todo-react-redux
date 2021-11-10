@@ -2,7 +2,6 @@ $white: rgba(255,255,255,0.3);
 
 form {
   display: flex;
-  flex-wrap: wrap;
 
   input {
     background: white;
@@ -19,7 +18,7 @@ form {
     color: #270B57;
     font-weight: 500;
     transition: all 0.2s ease-in-out;
-
+    word-wrap: break-word;
     
     &:hover {
       box-shadow: 4px 4px 60px 8px rgba(0,0,0,0.2);
@@ -27,9 +26,8 @@ form {
   }
 
   button {
-    background: #16f1ea;
     padding: 1em 2em;
-    margin: 2em 2em 2em 0;
+    margin: 2em 0em 2em 0;
     border: none;
     border-left: 1px solid $white;
     border-top: 1px solid $white;
@@ -39,6 +37,19 @@ form {
     font-family: 'Nunito';
     font-weight: 700;
     color: #270B57;
+    cursor: pointer;
+    background-image: linear-gradient(to left, #25aae1, #30dd8a, );
+
+     
+    &:hover {
+      background-image: linear-gradient(to right, #25aae1, #40e495, #30dd8a, #2bb673);
+      box-shadow: 0 4px 15px 0 rgba(49, 196, 190, 0.75);
+      background-size: 300% 100%;
+      border-radius: 50px;
+      -o-transition: all .4s ease-in-out;
+      -webkit-transition: all .4s ease-in-out;
+      transition: all .4s ease-in-out;
+    }
 
   }
 }

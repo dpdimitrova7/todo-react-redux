@@ -1,13 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import './task-item.styles.scss';
 import { useDispatch } from 'react-redux';
 import { updateTask } from '../../redux/tasksSlice';
 import { toggleComplete, deleteTodo } from '../../redux/tasksSlice';
 
+
 const TaskItem = ({id, title, completed}) => {
   const [editable, setEditable] = useState(false);
   const [editTask, setEditTask] = useState(title);
-
 
   const dispatch = useDispatch();
 
@@ -25,13 +25,18 @@ const TaskItem = ({id, title, completed}) => {
     setEditable(!editable);
   }
 
+  const handleEditTask = (e) => {
+    setEditTask(e.target.value);
+  }
+
   const handleUpdate = (e) => {
-    e.preventDefault();
-    setEditable(!editable);
+    console.log('test1', title);
     dispatch(updateTask({
       id: id,
       title: editTask,
     }))
+    e.preventDefault();
+    setEditable(!editable);
   }
   
   return (
@@ -39,18 +44,18 @@ const TaskItem = ({id, title, completed}) => {
      {editable ? (
         <div className='edit-item' style={{  background: completed ? `#D980FA` : `transparent`}}>
         <form onSubmit={handleUpdate} className='edit-form'>
-          <input 
+          <input
+            id={id}
             type='text'
             className='edit-input'
-            value={editTask}
-            onChange={(e) => setEditTask(e.target.value)}>
+            onChange={handleEditTask}>
           </input>
           <button type='submit' className='edit-save'>SAVE</button>
           </form>
           </div>
          ) : (
         <div className='wrapper'>
-          <div className='each-item' style={{  background: completed ? `#D980FA` : `transparent`}}>
+          <div className='each-item' style={{background: completed ? `#D980FA` : `transparent`}}>
             {title}
             <div>
               <label class='custom-checkbox'>

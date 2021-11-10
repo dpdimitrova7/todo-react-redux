@@ -19,8 +19,12 @@ $white: rgba(255,255,255,0.3);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  transition: all 0.6s ease-out;
-
+  opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 0.2s;
+  
 
 .custom-checkbox {
   box-sizing: border-box;
@@ -31,15 +35,17 @@ $white: rgba(255,255,255,0.3);
   .checkmark {
     width: 25px;
     height: 25px;
-    border: 2px solid #16f1ea;
+    border: 2px solid #2196f3;
     display: inline-block;
     border-radius: 25px;
     background: transparent url(https://cdn-icons-png.flaticon.com/512/2107/2107638.png) center/0% no-repeat;
     transition: background-size 0.2s ease;
   }
 
+
   [type="checkbox"]:checked + .checkmark{
     background-size: 60%;
+
   }
   
     input {
@@ -90,6 +96,7 @@ $white: rgba(255,255,255,0.3);
   color: #270B57;
   font-weight: 500;
   font-size: 16px;
+  width:70%;
 }
 
 .edit-save {
@@ -115,5 +122,22 @@ $white: rgba(255,255,255,0.3);
   align-items: center;
 }
 
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
 
 
