@@ -1,4 +1,4 @@
-$white: rgba(255,255,255,0.3);
+$white: rgba(255, 255, 255, 0.3);
 
 .each-item {
   width: 90%;
@@ -10,46 +10,45 @@ $white: rgba(255,255,255,0.3);
   border-top: 1px solid $white;
   border-radius: 5000px;
   backdrop-filter: blur(5px);
-  box-shadow: 4px 4px 60px rgba(0,0,0,0.2);
+  box-shadow: 4px 4px 60px rgba(0, 0, 0, 0.2);
   outline: none;
-  color: #270B57;
+  color: #270b57;
   font-weight: 500;
   transition: all 0.2s ease-in-out;
-  font-family: 'Nunito';
+  font-family: "Nunito";
   display: flex;
   justify-content: space-between;
   align-items: center;
   opacity: 1;
-	animation-name: fadeInOpacity;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-in;
-	animation-duration: 0.2s;
-  
+  animation-name: fadeInOpacity;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: 0.2s;
 
-.custom-checkbox {
-  box-sizing: border-box;
-  width: 25px;
-  height: 25px;
-  cursor: pointer;
-  
-  .checkmark {
+  .custom-checkbox {
+    box-sizing: border-box;
     width: 25px;
     height: 25px;
-    border: 2px solid #2196f3;
-    display: inline-block;
-    border-radius: 25px;
-    background: transparent url(https://cdn-icons-png.flaticon.com/512/2107/2107638.png) center/0% no-repeat;
-    transition: background-size 0.2s ease;
-  }
+    cursor: pointer;
 
+    .checkmark {
+      width: 25px;
+      height: 25px;
+      border: 2px solid #2196f3;
+      display: inline-block;
+      border-radius: 25px;
+      background: transparent
+        url(https://cdn-icons-png.flaticon.com/512/2107/2107638.png) center/0%
+        no-repeat;
+      transition: background-size 0.2s ease;
+    }
 
-  [type="checkbox"]:checked + .checkmark{
-    background-size: 60%;
+    [type="checkbox"]:checked + .checkmark {
+      background-size: 60%;
+    }
 
-  }
-  
     input {
-      display:none;
+      display: none;
     }
   }
 }
@@ -62,19 +61,18 @@ $white: rgba(255,255,255,0.3);
   display: block;
   margin: auto;
 
-  .edit-button{
+  .edit-button {
     cursor: pointer;
     background: transparent;
     border: none;
-    color: #270B57;
-  
+    color: #270b57;
   }
 
-  .del-button{
-      cursor: pointer;
-      background: transparent;
-      border: none;
-      color: #270B57;
+  .del-button {
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    color: #270b57;
   }
 }
 
@@ -92,11 +90,11 @@ $white: rgba(255,255,255,0.3);
   background: none;
   outline: none;
   border: 0;
-  font-family: 'Nunito';
-  color: #270B57;
+  font-family: "Nunito";
+  color: #270b57;
   font-weight: 500;
   font-size: 16px;
-  width:70%;
+  width: 70%;
 }
 
 .edit-save {
@@ -112,32 +110,30 @@ $white: rgba(255,255,255,0.3);
   border-top: 1px solid $white;
   border-radius: 5000px;
   backdrop-filter: blur(5px);
-  box-shadow: 4px 4px 60px rgba(0,0,0,0.2);
+  box-shadow: 4px 4px 60px rgba(0, 0, 0, 0.2);
   outline: none;
-  color: #270B57;
+  color: #270b57;
   font-weight: 500;
-  font-family: 'Nunito';
+  font-family: "Nunito";
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 @keyframes fadeInOpacity {
-	0% {
-		opacity: 0;
-	}
-	100% {
-		opacity: 1;
-	}
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @keyframes fadeInOpacity {
-	0% {
-		opacity: 0;
-	}
-	100% {
-		opacity: 1;
-	}
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
-
-

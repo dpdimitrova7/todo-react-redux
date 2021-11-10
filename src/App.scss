@@ -5,18 +5,18 @@ body {
   margin: 0;
   display: grid;
   place-items: center;
-  background: #EFE5FD;
+  background: #efe5fd;
 }
 
 .border-wrapper {
   padding: 2rem;
   position: relative;
-  background: linear-gradient(to right, #270B57, #16f1ea);
+  background: linear-gradient(to right, #270b57, #16f1ea);
   padding: 3px;
   min-width: 40vw;
-  
+
   .content {
-    background: #EFE5FD;
+    background: #efe5fd;
     color: white;
     padding: 2rem;
 
@@ -27,8 +27,8 @@ body {
 
   .heading {
     margin: auto;
-    font-family: 'Nunito';
+    font-family: "Nunito";
     font-size: 2.5em;
-    color: #270B57;
+    color: #270b57;
   }
 }
