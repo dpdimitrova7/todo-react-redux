@@ -1,4 +1,4 @@
-SETUP
+<h2>SETUP</h2>
 
 1. git clone https://github.com/dpdimitrova7/todo-react-redux.git
 
@@ -9,7 +9,7 @@ SETUP
 4. yarn start
 
 
-API SETUP
+<h2>API SETUP</h2>
 
 1. cd todo-react-redux/api
 
