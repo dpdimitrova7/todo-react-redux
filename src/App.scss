@@ -22,6 +22,7 @@ body {
 
     @media (max-width: $breakpoint-phone) {
       padding: 1rem;
+      min-width: none;
     }
   }
 

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./task-item.styles.scss";
 import { useDispatch } from "react-redux";
-import { updateTask } from "../../redux/tasksSlice";
-import { toggleComplete, deleteTodo } from "../../redux/tasksSlice";
+import { updateTasksAsync } from "../../redux/tasksSlice";
+import { toggleTasksAsync, deleteTasksAsync } from "../../redux/tasksSlice";
 
 const TaskItem = ({ id, title, completed }) => {
   const [editable, setEditable] = useState(false);
@@ -11,11 +11,11 @@ const TaskItem = ({ id, title, completed }) => {
   const dispatch = useDispatch();
 
   const handleCompleteClick = () => {
-    dispatch(toggleComplete({ id: id, completed: !completed }));
+    dispatch(toggleTasksAsync({ id: id, completed: !completed }));
   };
 
   const handleDeleteClick = () => {
-    dispatch(deleteTodo({ id: id }));
+    dispatch(deleteTasksAsync({ id: id }));
   };
 
   const handleEditable = () => {
@@ -27,9 +27,8 @@ const TaskItem = ({ id, title, completed }) => {
   };
 
   const handleUpdate = (e) => {
-    console.log("test1", title);
     dispatch(
-      updateTask({
+      updateTasksAsync({
         id: id,
         title: editTask,
       })
@@ -49,6 +48,7 @@ const TaskItem = ({ id, title, completed }) => {
             <input
               id={id}
               type="text"
+              value={editTask}
               className="edit-input"
               onChange={handleEditTask}
             ></input>

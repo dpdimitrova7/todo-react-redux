@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { addTask } from "../../redux/tasksSlice";
+import { addTasksAsync } from "../../redux/tasksSlice";
 import "./add-tasks-form.styles.scss";
 
 const AddTask = () => {
-  const [value, setValue] = useState();
-
+  const [value, setValue] = useState('');
   const dispatch = useDispatch();
 
   const handleSetValue = (e) => {
@@ -14,14 +13,16 @@ const AddTask = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    dispatch(
-      addTask({
-        title: value,
-      })
-    );
+    if (value) {
+			dispatch(
+				addTasksAsync({
+					title: value,
+				})
+			);
+		}
     setValue("");
   };
-
+  
   return (
     <form onSubmit={onSubmit} className="form">
       <label className="label">
