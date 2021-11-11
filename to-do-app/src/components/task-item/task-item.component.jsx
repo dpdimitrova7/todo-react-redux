@@ -42,6 +42,7 @@ const TaskItem = ({ id, title, completed }) => {
       {editable ? (
         <div
           className="edit-item"
+          data-test="task-item"
           style={{ background: completed ? `#D980FA` : `transparent` }}
         >
           <form onSubmit={handleUpdate} className="edit-form">

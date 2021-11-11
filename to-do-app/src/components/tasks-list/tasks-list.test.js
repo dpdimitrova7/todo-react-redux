@@ -5,24 +5,31 @@ import { Provider } from 'react-redux'
 import configureStore from 'redux-mock-store'
 import { findByTestAttribute } from '../../Utils';
 
+let store;
+
 const setUp = (props={}) => {
   const mockStore = configureStore()
-  let store;
   store = mockStore();
   const component = shallow(<Provider store={store}><TasksList {...props} /></Provider>);
+  console.log(component);
   return component;
 }
 
-describe('Task List Component', () => {
-
-  //const initialState = {}
-  let component;
+describe('It has props', () => {
+  let wrapper;
   beforeEach(() => {
-    component = setUp();
+    const props = {
+      id: 'test id',
+      title: 'test title',
+      completed: 'test completed'
+    };
+     wrapper = setUp(props);
   })
 
   it('It should render without errors', () => {
-    const task = findByTestAttribute(component, 'wrapper-list')
-    expect(task.length).toBe(0);
+    const component = findByTestAttribute(wrapper, 'wrapper-list')
+    expect(component.length).toBe(0);
   });
-})
+});
+
+
