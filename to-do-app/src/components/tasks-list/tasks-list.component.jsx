@@ -11,7 +11,7 @@ const TasksList = () => {
   }, [dispatch]);
 
   return (
-    <div className="wrapper-list">
+    <div className="wrapper-list" data-test="wrapper-list">
       {tasks
         .sort((task) => task.completed - !task.completed)
         .map((task) => (
